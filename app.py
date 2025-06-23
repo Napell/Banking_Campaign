@@ -19,7 +19,7 @@ st.title("Bank Deposit Predictor")
 age = st.number_input("Age", min_value=18, max_value=100)
 job = st.selectbox("Job", ['admin.',
 'blue-collar','technician','services','management','retired','entrepreneur','self-employed','housemaid','unemployed','student','unknown'])
-marital=st.selectbox("Marital", ['single','divorce','unknown'])
+marital=st.selectbox("Marital", ['single','married','divorce','unknown'])
 education = st.selectbox("Education", ['university.degree','high.school','basic.9y','professional.course','basic.4y','basic.6y','unknown','illiterate'])
 default = st.selectbox("Default", ['yes','no','unknown'])
 housing = st.selectbox("Housing", ['yes','no','unknown'])
@@ -39,35 +39,7 @@ cons_conf_idx = st.number_input("cons.conf.idx")
 euribor3m = st.number_input("euribor3m")
 nr_employed = st.number_input("nr.employed")
 
-
-
-if st.button("Predict"):
-    input_df = pd.DataFrame([{
-        'age': age,
-        'job': job,
-      'marital':marital,
-        'education': education,
-        'default': default,
-        'housing': housing,
-        'loan': loan,
-        'contact':contact,
-        'month':month,
-        'day_of_week': day_of_week,
-        'duration': duration,
-        'campaign': campaign,
-        'pdays': pdays,
-        'previous': previous,
-        'poutcome': poutcome,
-        'emp_var_rate': emp_var_rate,
-        'cons_price_idx':cons_price_idx,
-        'cons_conf_idx': cons_conf_idx,
-        'euribor3m': euribor3m,
-        'nr_employed': nr_employed
-        
-    }])
-
-    input_df = pd.get_dummies(input_df)
-    features=['age',
+ features=['age',
 'duration',
 'campaign',
 'pdays',
@@ -121,6 +93,35 @@ if st.button("Predict"):
 'poutcome_nonexistent',
 'poutcome_success'
               ]
+
+if st.button("Predict"):
+    input_df = pd.DataFrame([{
+        'age': age,
+        'job': job,
+      'marital':marital,
+        'education': education,
+        'default': default,
+        'housing': housing,
+        'loan': loan,
+        'contact':contact,
+        'month':month,
+        'day_of_week': day_of_week,
+        'duration': duration,
+        'campaign': campaign,
+        'pdays': pdays,
+        'previous': previous,
+        'poutcome': poutcome,
+        'emp_var_rate': emp_var_rate,
+        'cons_price_idx':cons_price_idx,
+        'cons_conf_idx': cons_conf_idx,
+        'euribor3m': euribor3m,
+        'nr_employed': nr_employed
+        
+    }])
+
+    input_df = pd.get_dummies(input_df)
+    
+   
     for col in features:
 
         if col not in input_df.columns:
