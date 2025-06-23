@@ -39,7 +39,7 @@ cons_conf_idx = st.number_input("cons.conf.idx")
 euribor3m = st.number_input("euribor3m")
 nr_employed = st.number_input("nr.employed")
 
- features=['age',
+features=['age',
 'duration',
 'campaign',
 'pdays',
