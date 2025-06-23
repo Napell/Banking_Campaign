@@ -19,7 +19,7 @@ st.title("Bank Deposit Predictor")
 age = st.number_input("Age", min_value=18, max_value=100)
 job = st.selectbox("Job", ['admin.',
 'blue-collar','technician','services','management','retired','entrepreneur','self-employed','housemaid','unemployed','student','unknown'])
-marital=st.selectbox("Marital", ['single','divorce''unknown'])
+marital=st.selectbox("Marital", ['single','divorce','unknown'])
 education = st.selectbox("Education", ['university.degree','high.school','basic.9y','professional.course','basic.4y','basic.6y','unknown','illiterate'])
 default = st.selectbox("Default", ['yes','no','unknown'])
 housing = st.selectbox("Housing", ['yes','no','unknown'])
@@ -31,7 +31,7 @@ duration = st.number_input("duration", min_value=1, max_value=3800)
 campaign= st.number_input("campaign", min_value=1, max_value=40)
 pdays = st.number_input("pdays", min_value=1, max_value=999)
 previous = st.number_input("previous", min_value=1, max_value=7)
-poutcome = st.selectbox("poutcome", ['nonexistent','failure'
+poutcome = st.selectbox("poutcome", ['nonexistent','failure',
 'success'])
 emp_var_rate = st.number_input("emp.var.rate")
 cons_price_idx= st.number_input("cons.price.idx")
