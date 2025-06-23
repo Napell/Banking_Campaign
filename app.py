@@ -128,7 +128,7 @@ if st.button("Predict"):
     input_df = input_df[features]
 
 
-]
+
     input_df_scaled = scaler.transform(input_df)
 
     prediction = model.predict(input_df_scaled)[0]
