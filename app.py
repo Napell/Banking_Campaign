@@ -81,7 +81,7 @@ if st.button("Predict"):
 'job_entrepreneur',
 'job_housemaid',
 'job_management',
-'job_retired’,
+'job_retired',
 'job_self-employed',
 'job_services',
 'job_student',
