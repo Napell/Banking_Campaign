@@ -7,6 +7,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import scikit-learn
 
 # Load the model and scaler
 model = pickle.load(open('log_model.pkl', 'rb'))
