@@ -33,7 +33,7 @@ pdays = st.number_input("pdays", min_value=1, max_value=999)
 previous = st.number_input("previous", min_value=1, max_value=7)
 poutcome = st.selectbox("poutcome", ['nonexistent','failure',
 'success'])
-emp.var.rate = st.number_input("emp_var_rate")
+emp_var_rate = st.number_input("emp_var_rate")
 cons_price_idx= st.number_input("cons_price_idx")
 cons_conf_idx = st.number_input("cons_conf_idx")
 euribor3m = st.number_input("euribor3m")
