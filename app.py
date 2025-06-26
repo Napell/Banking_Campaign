@@ -10,8 +10,14 @@ import pickle
 
 
 # Load the model and scaler
-model = pickle.load(open('log_model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+try:
+    model = pickle.load(open('log_model.pkl', 'rb'))
+    st.success("Model loaded successfully")
+    scaler = pickle.load(open('scaler.pkl', 'rb'))
+except FileNotFoundError:
+    st.error("File not found")
+except Exception as e:
+    st.error("An error occured")
 
 st.title("Bank Deposit Predictor")
 
@@ -85,7 +91,7 @@ if st.button("Predict"):
     # st.write(input_df_scaled)
     st.write(model.predict(input_df_scaled))
     prediction = model.predict(input_df_scaled)[0]
-    st.write(model.predict(input_df_scaled))
+    st.write(model.coef_)
     
     st.success(f"Prediction: {'Yes' if prediction == 1 else 'No'}")
 
