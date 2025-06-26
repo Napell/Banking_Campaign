@@ -16,7 +16,7 @@ try:
     scaler = pickle.load(open('scaler.pkl', 'rb'))
     with open("columns.pkl","rb") as f:
         features = pickle.load(f)
-    st.success(column loaded successfully")
+    st.success("column loaded successfully")
 except FileNotFoundError:
     st.error("File not found")
 except Exception as e:
