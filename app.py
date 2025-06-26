@@ -120,7 +120,7 @@ if st.button("Predict"):
     }])
 
     input_df = pd.get_dummies(input_df)
-    st.write(input_df)
+    # st.write(input_df)
    
     for col in features:
 
