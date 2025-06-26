@@ -83,9 +83,10 @@ if st.button("Predict"):
 
     input_df_scaled = scaler.transform(input_df)
     # st.write(input_df_scaled)
+    st.write(model.predict(input_df_scaled))
     prediction = model.predict(input_df_scaled)[0]
     st.write(model.predict(input_df_scaled))
-    st.write(prediction)
+    
     st.success(f"Prediction: {'Yes' if prediction == 1 else 'No'}")
 
 
