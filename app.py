@@ -12,10 +12,11 @@ import pickle
 # Load the model and scaler
 try:
     model = pickle.load(open('log_model.pkl', 'rb'))
-    st.success("Model loaded successfully")
+        st.success("Model loaded successfully")
     scaler = pickle.load(open('scaler.pkl', 'rb'))
     with open("columns.pkl","rb") as f:
         features = pickle.load(f)
+        st.success("Model loaded successfully")
 except FileNotFoundError:
     st.error("File not found")
 except Exception as e:
