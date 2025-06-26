@@ -77,6 +77,7 @@ features=['age',
 'loan_unknown',
 'loan_yes',
 'contact_telephone',
+'contact_cellular',
 'month_aug',
 'month_dec',
 'month_jul',
@@ -97,8 +98,17 @@ features=['age',
 if st.button("Predict"):
     input_df = pd.DataFrame([{
         'age': age,
+        'duration': duration,
+        'campaign': campaign,
+        'pdays': pdays,
+        'previous': previous,
+        'emp_var_rate': emp_var_rate,
+        'cons_price_idx':cons_price_idx,
+        'cons_conf_idx': cons_conf_idx,
+        'euribor3m': euribor3m,
+        'nr_employed': nr_employed,
         'job': job,
-      'marital':marital,
+        'marital':marital,
         'education': education,
         'default': default,
         'housing': housing,
@@ -106,16 +116,10 @@ if st.button("Predict"):
         'contact':contact,
         'month':month,
         'day_of_week': day_of_week,
-        'duration': duration,
-        'campaign': campaign,
-        'pdays': pdays,
-        'previous': previous,
         'poutcome': poutcome,
-        'emp_var_rate': emp_var_rate,
-        'cons_price_idx':cons_price_idx,
-        'cons_conf_idx': cons_conf_idx,
-        'euribor3m': euribor3m,
-        'nr_employed': nr_employed
+      
+      
+      
         
     }])
 
