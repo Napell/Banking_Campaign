@@ -78,11 +78,11 @@ if st.button("Predict"):
         if col not in input_df.columns:
             input_df[col] = 0
     input_df = input_df[features]
-    # st.write(input_df)
+    st.write(input_df)
 
 
     input_df_scaled = scaler.transform(input_df)
-    st.write(input_df_scaled)
+    # st.write(input_df_scaled)
     prediction = model.predict(input_df_scaled)[0]
     st.write(model.predict(input_df_scaled))
     st.write(prediction)
