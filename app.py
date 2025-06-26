@@ -14,10 +14,12 @@ try:
     model = pickle.load(open('log_model.pkl', 'rb'))
     st.success("Model loaded successfully")
     scaler = pickle.load(open('scaler.pkl', 'rb'))
+    with open("columns.pkl","rb") as f:
+        features = pickle.load(f)
 except FileNotFoundError:
     st.error("File not found")
 except Exception as e:
-    st.error("An error occured")
+    st.error("could not load features")
 
 st.title("Bank Deposit Predictor")
 
