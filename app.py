@@ -124,14 +124,14 @@ if st.button("Predict"):
     }])
 
     input_df = pd.get_dummies(input_df)
-    st.write(input_df)
+  
    
     for col in features:
 
         if col not in input_df.columns:
             input_df[col] = 0
     input_df = input_df[features]
-
+    st.write(input_df)
 
 
     input_df_scaled = scaler.transform(input_df)
